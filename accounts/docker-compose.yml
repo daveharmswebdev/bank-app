@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: daveharms/bankapp-account:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - davebank-network
+
+  loans:
+    image: daveharms/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - davebank-network
+
+  cards:
+    image: daveharms/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - davebank-network
+
+networks:
+  davebank-network:
